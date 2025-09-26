@@ -1,0 +1,37 @@
+@model PrescriptionApp.Models.Prescription
+
+@{
+    ViewData["Title"] = Model.PrescriptionId == 0 ? "Add Prescription" : "Edit Prescription";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="MedicationName"></label>
+        <input asp-for="MedicationName" class="form-control" />
+        <span asp-validation-for="MedicationName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FillStatus"></label>
+        <select asp-for="FillStatus" class="form-control">
+            <option>New</option>
+            <option>Filled</option>
+            <option>Pending</option>
+        </select>
+        <span asp-validation-for="FillStatus" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cost"></label>
+        <input asp-for="Cost" class="form-control" />
+        <span asp-validation-for="Cost" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
