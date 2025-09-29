@@ -218,3 +218,4 @@ C:\Users\Sana\Desktop\Prescription\obj\Debug\net9.0\refint\Prescription.dll
 C:\Users\Sana\Desktop\Prescription\obj\Debug\net9.0\Prescription.pdb
 C:\Users\Sana\Desktop\Prescription\obj\Debug\net9.0\Prescription.genruntimeconfig.cache
 C:\Users\Sana\Desktop\Prescription\obj\Debug\net9.0\ref\Prescription.dll
+C:\Users\Sana\Desktop\Prescription\obj\Debug\net9.0\Prescription.sourcelink.json

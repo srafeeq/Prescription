@@ -17,11 +17,12 @@
             <th>Fill Status</th>
             <th>Cost</th>
             <th>Request Time</th>
-            <th></th>
+            <th>Actions</th>   <!-- ✅ Added Actions column header -->
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
         <tr>
             <td>@item.MedicationName</td>
             <td>@item.FillStatus</td>
@@ -35,4 +36,6 @@
 }
     </tbody>
 </table>
+
+
 

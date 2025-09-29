@@ -8,34 +8,28 @@
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="MedicationName" class="control-label"></label>
+        <label asp-for="MedicationName"></label>
         <input asp-for="MedicationName" class="form-control" />
         <span asp-validation-for="MedicationName" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="FillStatus" class="control-label"></label>
+        <label asp-for="FillStatus"></label>
         <input asp-for="FillStatus" class="form-control" />
         <span asp-validation-for="FillStatus" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="Cost" class="control-label"></label>
+        <label asp-for="Cost"></label>
         <input asp-for="Cost" class="form-control" />
         <span asp-validation-for="Cost" class="text-danger"></span>
     </div>
 
     <div class="form-group">
-        <label asp-for="RequestTime" class="control-label"></label>
-        <input asp-for="RequestTime" class="form-control" type="datetime-local" />
-        <span asp-validation-for="RequestTime" class="text-danger"></span>
+        <label asp-for="RequestTime"></label>
+        <input asp-for="RequestTime" class="form-control" value="@DateTime.Now" readonly />
     </div>
 
-    <button type="submit" class="btn btn-primary">Save</button> |
-    <a asp-action="Index">Back to List</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
-

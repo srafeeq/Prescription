@@ -1,9 +1,39 @@
+@model IEnumerable<PrescriptionApp.Models.Prescription>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home - Prescriptions";
 }
 
-<h2>Welcome to PrescriptionApp</h2>
+<h2>Prescriptions</h2>
+
 <p>
-    This is the home page.  
-    Use the navigation menu to view and manage prescriptions.
+    <a asp-controller="Prescription" asp-action="Create" class="btn btn-primary">Add Prescription</a>
 </p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Medication Name</th>
+            <th>Fill Status</th>
+            <th>Cost</th>
+            <th>Request Time</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MedicationName</td>
+            <td>@item.FillStatus</td>
+            <td>@item.Cost</td>
+            <td>@item.RequestTime.ToString("dd-MMM-yyyy hh:mm tt")</td>
+            <td>
+                <a asp-controller="Prescription" asp-action="Edit" asp-route-id="@item.PrescriptionId">Edit</a> |
+                <a asp-controller="Prescription" asp-action="Delete" asp-route-id="@item.PrescriptionId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
